@@ -1,10 +1,8 @@
-import { TextExtractor } from "../extractor";
-import { AbstractStrategy } from "../strategy/abstractStrategy";
+import { extractorFactory, TextExtractor } from "../extractor";
 
 describe("Extractor", () => {
-  it("constructor returns an object", () => {
-    const abstractStrategy = new AbstractStrategy();
-    const extractor = new TextExtractor(abstractStrategy);
-    expect(extractor).toBeDefined();
+  it("factory returns an extractor", () => {
+    const extractor = extractorFactory("myfile");
+    expect(extractor instanceof TextExtractor).toBeTruthy();
   });
 });

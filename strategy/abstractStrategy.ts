@@ -1,7 +1,5 @@
 export class AbstractStrategy {
-  constructor() {}
+  constructor(filePath: string) {}
 
-  extractText(filePath: string): string {
-    return "hello";
-  }
+  public execute() {}
 }

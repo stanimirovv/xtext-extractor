@@ -1,0 +1,30 @@
+{
+  "name": "xtext-extractor",
+  "version": "0.0.1",
+  "description": "extensible text from document extractor",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanimirovv/xtext-extractor.git"
+  },
+  "keywords": [
+    "pdf",
+    "docx",
+    "doc",
+    "extract",
+    "text"
+  ],
+  "author": "@stanimirovv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stanimirovv/xtext-extractor/issues"
+  },
+  "homepage": "https://github.com/stanimirovv/xtext-extractor#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}

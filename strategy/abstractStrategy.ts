@@ -1,5 +1,7 @@
 export class AbstractStrategy {
   constructor(filePath: string) {}
 
-  public execute() {}
+  execute(): string {
+    throw "Override me.";
+  }
 }

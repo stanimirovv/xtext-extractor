@@ -15,7 +15,7 @@ describe("Extractor", () => {
   it("extractor can extract text", () => {
     expect.assertions(1);
     try {
-      extractorFactory("myfile");
+      extractorFactory("myfile.unsuported");
     } catch (err) {
       expect(err).toEqual("Unsupported file type");
     }

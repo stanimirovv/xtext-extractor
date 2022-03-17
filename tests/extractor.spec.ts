@@ -17,7 +17,7 @@ describe("Extractor", () => {
     try {
       extractorFactory("myfile.unsuported");
     } catch (err) {
-      expect(err).toEqual("Unsupported file type");
+      expect(err).toEqual("Unsupported file type .unsuported");
     }
   });
 

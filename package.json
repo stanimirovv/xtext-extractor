@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
-    "format:fix": "eslint **/*.ts --fix"
+    "format:fix": "prettier **/*.ts --fix"
   },
   "repository": {
     "type": "git",

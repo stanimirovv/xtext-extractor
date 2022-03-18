@@ -34,7 +34,7 @@ export class TextExtractor {
       const fileHandle = await fs.open(this.filePath, "r");
       await fileHandle.stat();
     } catch (err: unknown) {
-      throw `Error stating file: ${this.filePath}`;
+      throw new Error(`Error stating file: ${this.filePath}`);
     }
   }
 
@@ -48,7 +48,8 @@ export function extractorFactory(filePath: string): TextExtractor {
   const extension = path.extname(filePath);
   const strategyClass = TextExtractor.supportedFileExtensions[extension];
   if (!strategyClass) {
-    throw `Unsupported file type ${extension}`;
+    throw new Error(`Unsupported file type ${extension}`);
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return new TextExtractor(filePath, new (strategyClass as any)(filePath));
 }

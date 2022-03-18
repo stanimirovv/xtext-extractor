@@ -10,7 +10,6 @@ type TextResponse = {
 };
 export class PdfStrategy extends AbstractStrategy {
   public async execute(): Promise<string> {
-    console.log("filepath:", this.filePath);
     const command = this.buildExtractCommand();
     const response: TextResponse = await exec(command);
     return response.stdout;

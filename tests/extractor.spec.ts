@@ -31,7 +31,6 @@ describe("Extractor", () => {
     expect(Object.keys(TextExtractor.supportedFileExtensions).length).toEqual(
       2
     );
-    console.log(TextExtractor.supportedFileExtensions);
     const extractor = extractorFactory("myfile.ext");
     expect(extractor.extract()).toEqual("test");
   });

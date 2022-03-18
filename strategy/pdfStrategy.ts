@@ -1,6 +1,6 @@
 import { AbstractStrategy } from "./abstractStrategy";
 
-export class PdfStrategy extends AbstractStrategy implements IStrategy {
+export class PdfStrategy extends AbstractStrategy {
   public execute(): string {
     return "hello";
   }

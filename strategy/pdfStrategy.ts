@@ -12,7 +12,6 @@ export class PdfStrategy extends AbstractStrategy {
     console.log("filepath:", this.filePath);
     const command = this.buildExtractCommand();
     const response: TextResponse = await exec(command);
-    console.log(response);
     return response.stdout;
   }
 

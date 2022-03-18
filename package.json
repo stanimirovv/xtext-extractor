@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format:fix": "eslint **/*.ts --fix"
   },
   "repository": {
     "type": "git",

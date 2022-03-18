@@ -16,7 +16,10 @@ describe("Extractor", () => {
     try {
       extractorFactory("myfile.unsuported");
     } catch (err) {
-      expect(err).toEqual("Unsupported file type .unsuported");
+      if (err instanceof Error)
+        expect(err.toString()).toEqual(
+          "Error: Unsupported file type .unsuported"
+        );
     }
   });
 
@@ -25,7 +28,10 @@ describe("Extractor", () => {
     try {
       extractorFactory("myfile.unsuported");
     } catch (err) {
-      expect(err).toEqual("Unsupported file type .unsuported");
+      if (err instanceof Error)
+        expect(err.toString()).toEqual(
+          "Error: Unsupported file type .unsuported"
+        );
     }
   });
 

@@ -1,7 +1,7 @@
 export class AbstractStrategy {
-  constructor(filePath: string) {}
+  constructor(protected filePath: string) {}
 
-  execute(): string {
+  async execute(): Promise<string> {
     throw "Override me.";
   }
 }

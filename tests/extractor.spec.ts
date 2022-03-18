@@ -9,7 +9,7 @@ describe("Extractor", () => {
 
   it("extractor can extract text", async () => {
     const extractor = extractorFactory("./tests/data/hi.pdf");
-    expect(await extractor.extract()).toEqual("hello");
+    expect(await extractor.extract()).toEqual("Hello world\n\n\f");
   });
 
   it("extractor can extract text", async () => {
@@ -31,7 +31,7 @@ describe("Extractor", () => {
 
   it("add custom extractor, use it", async () => {
     class TestStrategy extends AbstractStrategy {
-      public execute(): string {
+      public async execute(): Promise<string> {
         return "test";
       }
     }

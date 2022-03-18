@@ -7,12 +7,20 @@ describe("Extractor", () => {
     expect(extractor instanceof TextExtractor).toBeTruthy();
   });
 
-  it("extractor can extract text", () => {
-    const extractor = extractorFactory("myfile.pdf");
-    expect(extractor.extract()).toEqual("hello");
+  it("extractor can extract text", async () => {
+    const extractor = extractorFactory("./tests/data/hi.pdf");
+    expect(await extractor.extract()).toEqual("hello");
   });
 
-  it("extractor can extract text", () => {
+  it("extractor can extract text", async () => {
+    try {
+      extractorFactory("myfile.unsuported");
+    } catch (err) {
+      expect(err).toEqual("Unsupported file type .unsuported");
+    }
+  });
+
+  it("extractor unsupported format", () => {
     expect.assertions(1);
     try {
       extractorFactory("myfile.unsuported");
@@ -21,7 +29,7 @@ describe("Extractor", () => {
     }
   });
 
-  it("add custom extractor, use it", () => {
+  it("add custom extractor, use it", async () => {
     class TestStrategy extends AbstractStrategy {
       public execute(): string {
         return "test";
@@ -31,7 +39,7 @@ describe("Extractor", () => {
     expect(Object.keys(TextExtractor.supportedFileExtensions).length).toEqual(
       2
     );
-    const extractor = extractorFactory("myfile.ext");
-    expect(extractor.extract()).toEqual("test");
+    const extractor = extractorFactory("./tests/data/myfile.ext");
+    expect(await extractor.extract()).toEqual("test");
   });
 });

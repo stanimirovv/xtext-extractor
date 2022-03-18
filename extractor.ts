@@ -1,3 +1,4 @@
+import * as fs from "fs/promises";
 import path from "path";
 import { AbstractStrategy } from "./strategy/abstractStrategy";
 import { PdfStrategy } from "./strategy/pdfStrategy";
@@ -12,7 +13,10 @@ export class TextExtractor {
     typeof AbstractStrategy
   > = { ".pdf": PdfStrategy };
 
-  constructor(private readonly strategy: AbstractStrategy) {}
+  constructor(
+    private readonly filePath: string,
+    private readonly strategy: AbstractStrategy
+  ) {}
 
   public static get supportedFileExtensions() {
     return TextExtractor._supportedFileExtensions;
@@ -25,7 +29,17 @@ export class TextExtractor {
     TextExtractor._supportedFileExtensions[extension] = strategy;
   }
 
-  public extract(): string {
+  private async validateFile() {
+    try {
+      const fileHandle = await fs.open(this.filePath, "r");
+      await fileHandle.stat();
+    } catch (err: unknown) {
+      throw `Error stating file: ${this.filePath}`;
+    }
+  }
+
+  public async extract(): Promise<string> {
+    await this.validateFile();
     return this.strategy.execute();
   }
 }
@@ -36,5 +50,5 @@ export function extractorFactory(filePath: string): TextExtractor {
   if (!strategyClass) {
     throw `Unsupported file type ${extension}`;
   }
-  return new TextExtractor(new (strategyClass as any)(filePath));
+  return new TextExtractor(filePath, new (strategyClass as any)(filePath));
 }

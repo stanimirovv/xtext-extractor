@@ -3,10 +3,6 @@ import path from "path";
 import { AbstractStrategy } from "./strategy/abstractStrategy";
 import { PdfStrategy } from "./strategy/pdfStrategy";
 
-interface IStrategy {
-  execute(): string;
-}
-
 export class TextExtractor {
   private static _supportedFileExtensions: Record<
     string,

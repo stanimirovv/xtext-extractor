@@ -1,10 +1,10 @@
 {
   "name": "xtext-extractor",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "extensible text from document extractor",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "jest",
     "prepare": "husky install",

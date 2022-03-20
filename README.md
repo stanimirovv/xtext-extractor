@@ -42,8 +42,33 @@ console.log(`extracted text: ${text}`);
 ```
 
 # Add custom extractor
+
+First define a new strategy:
+```typescript
+class ExampleStrategy extends AbstractStrategy {
+  async execute(): Promise<string> {
+    return "example";
+  }
+}
 ```
-TODO
+
+Then register the strategy via the provided static method:
+```typescript
+TextExtractor.addExtractor(".example", ExampleStrategy);
+```
+
+From this point onward the `.example` extractor will be usable, so calling the factory with a `.example` file will select the correct strategy:
+```typescript
+  const extractor = extractorFactory("test.example");
+  console.log(extractor);
+  /*
+  The console log results to:
+    example
+    TextExtractor {
+        filePath: 'test.example',
+        strategy: ExampleStrategy { filePath: 'test.example' }
+    }
+  */
 ```
 
 # Why ?

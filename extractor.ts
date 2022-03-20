@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import { FileStatError } from "./common/error.list";
 import { AbstractStrategy } from "./strategy/abstractStrategy";
 import { PdfStrategy } from "./strategy/pdfStrategy";
 
@@ -29,8 +30,9 @@ export class TextExtractor {
     try {
       const fileHandle = await fs.open(this.filePath, "r");
       await fileHandle.stat();
+      await fileHandle.close();
     } catch (err: unknown) {
-      throw new Error(`Error stating file: ${this.filePath}`);
+      throw new FileStatError(`Error stating file: ${this.filePath}`);
     }
   }
 

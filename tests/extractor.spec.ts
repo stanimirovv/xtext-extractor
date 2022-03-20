@@ -1,6 +1,7 @@
 import { extractorFactory, TextExtractor } from "../extractor";
 import { AbstractStrategy } from "../strategy/abstractStrategy";
 
+// The suite contains integration tests as it has no mocks and depends on the test files
 describe("Extractor", () => {
   it("factory returns an extractor", () => {
     const extractor = extractorFactory("myfile.pdf");

@@ -1,7 +1,9 @@
+import { NeedsImplementationError } from "../common/error.list";
+
 export class AbstractStrategy {
   constructor(protected filePath: string) {}
 
   async execute(): Promise<string> {
-    throw new Error("Override me.");
+    throw new NeedsImplementationError("Override me.");
   }
 }

@@ -1,5 +1,5 @@
-import * as childProcess from "child_process";
-import * as util from "util";
+import childProcess from "child_process";
+import util from "util";
 import { AbstractStrategy } from "./abstractStrategy";
 
 const exec = util.promisify(childProcess.exec);

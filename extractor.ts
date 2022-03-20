@@ -1,4 +1,4 @@
-import * as fs from "fs/promises";
+import fs from "fs/promises";
 import path from "path";
 import { AbstractStrategy } from "./strategy/abstractStrategy";
 import { PdfStrategy } from "./strategy/pdfStrategy";

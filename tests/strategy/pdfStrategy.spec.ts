@@ -32,6 +32,7 @@ describe("pdfStrategy", () => {
     const strategy = new PdfStrategy("./tests/data/hi.pdf");
     const spy = jest.spyOn(childProcess, "exec");
     spy.mockImplementationOnce(() => {
+      // This opens a  soner cloud issue, but is needed for testing
       throw "unexpected error";
     });
 

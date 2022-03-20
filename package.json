@@ -4,7 +4,6 @@
   "description": "extensible text from document extractor",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "commonjs",
   "scripts": {
     "test": "jest",
     "prepare": "husky install",

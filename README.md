@@ -4,7 +4,7 @@ Extendable Text Extractor
 
 **NOTE** module is still in active development. Give it a week or so :)
 
-
+[![Node.js CI](https://github.com/stanimirovv/xtext-extractor/actions/workflows/node-ci.js.yml/badge.svg)](https://github.com/stanimirovv/xtext-extractor/actions/workflows/node-ci.js.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=stanimirovv_xtext-extractor&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=stanimirovv_xtext-extractor)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=stanimirovv_xtext-extractor&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=stanimirovv_xtext-extractor)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=stanimirovv_xtext-extractor&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=stanimirovv_xtext-extractor)

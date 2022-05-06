@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "5.21.0",
     "babel": "6.23.0",
     "babel-preset-env": "1.7.0",
-    "eslint": "8.14.0",
+    "eslint": "8.15.0",
     "husky": "7.0.4",
     "jest": "28.0.3",
     "prettier": "2.6.2",
